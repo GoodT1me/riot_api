@@ -1,0 +1,5049 @@
+{ "/login": {
+    "post": {
+      "tags": [
+        "Login"
+      ],
+      "summary": "login",
+      "parameters": [
+        {
+          "name": "credentials",
+          "in": "body",
+          "description": "The login credentials",
+          "schema": {
+            "$ref": "#/definitions/Credentials"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Authorization info",
+          "schema": {
+            "items": {
+              "$ref": "#/definitions/AuthorizationResponse"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/logout": {
+    "delete": {
+      "tags": [
+        "Logout"
+      ],
+      "summary": "logout"
+    }
+  },
+  "/api/users": {
+    "get": {
+      "tags": [
+        "User Operations"
+      ],
+      "summary": "finds all the users",
+      "responses": {
+        "200": {
+          "description": "user list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "User Operations"
+      ],
+      "summary": "saves a new user",
+      "parameters": [
+        {
+          "name": "user",
+          "in": "body",
+          "description": "The new user",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "user response",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/users/{userId}": {
+    "parameters": [
+      {
+        "name": "userId",
+        "in": "path",
+        "required": true,
+        "description": "ID of user that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "User Operations"
+      ],
+      "summary": "finds a user by its id",
+      "responses": {
+        "200": {
+          "description": "user response",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "User Operations"
+      ],
+      "summary": "deletes a user by its id",
+      "responses": {
+        "200": {
+          "description": "user response",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "User Operations"
+      ],
+      "summary": "updates a user by its id",
+      "parameters": [
+        {
+          "name": "user",
+          "in": "body",
+          "description": "The new user",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "user response",
+          "schema": {
+            "$ref": "#/definitions/User"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+   "/api/parentbrands": {
+    "get": {
+      "tags": [
+        "Parent Brand Operations"
+      ],
+      "summary": "finds all parent brands",
+      "responses": {
+        "200": {
+          "description": "parent brands list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ParentBrand"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Parent Brand Operations"
+      ],
+      "summary": "saves a new brand",
+      "parameters": [
+        {
+          "name": "parentBrand",
+          "in": "body",
+          "description": "The new parent brand",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "parent brand response",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/parentbrands/{parentBrandId}": {
+    "parameters": [
+      {
+        "name": "parentBrandId",
+        "in": "path",
+        "required": true,
+        "description": "ID of parent brand that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Parent Brand Operations"
+      ],
+      "summary": "finds a parent brand by its id",
+      "responses": {
+        "200": {
+          "description": "parent brand response",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Parent Brand Operations"
+      ],
+      "summary": "deletes a parent brand by its id",
+      "responses": {
+        "200": {
+          "description": "parent brand response",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Parent Brand Operations"
+      ],
+      "summary": "updates a parent brand by its id",
+      "parameters": [
+        {
+          "name": "parentBrand",
+          "in": "body",
+          "description": "The new parent brand",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "parent brand response",
+          "schema": {
+            "$ref": "#/definitions/ParentBrand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/brands": {
+    "get": {
+      "tags": [
+        "Brand Operations"
+      ],
+      "summary": "finds all brands",
+      "responses": {
+        "200": {
+          "description": "brands list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Brand"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Brand Operations"
+      ],
+      "summary": "saves a new brand",
+      "parameters": [
+        {
+          "name": "brand",
+          "in": "body",
+          "description": "The new brand",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "brand response",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/brands/{brandId}": {
+    "parameters": [
+      {
+        "name": "brandId",
+        "in": "path",
+        "required": true,
+        "description": "ID of brand that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Brand Operations"
+      ],
+      "summary": "finds a brand by its id",
+      "responses": {
+        "200": {
+          "description": "brand response",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Brand Operations"
+      ],
+      "summary": "deletes a brand by its id",
+      "responses": {
+        "200": {
+          "description": "brand response",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Brand Operations"
+      ],
+      "summary": "updates a brand by its id",
+      "parameters": [
+        {
+          "name": "brand",
+          "in": "body",
+          "description": "The new brand",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "brand response",
+          "schema": {
+            "$ref": "#/definitions/Brand"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chainregions": {
+    "get": {
+      "tags": [
+        "ChainRegion Operations"
+      ],
+      "summary": "finds all the chain regions",
+      "responses": {
+        "200": {
+          "description": "chain region list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChainRegion"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "ChainRegion Operations"
+      ],
+      "summary": "saves a new chain region",
+      "parameters": [
+        {
+          "name": "chainRegion",
+          "in": "body",
+          "description": "The new chain region",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chain region response",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chainregions/{chainRegionId}": {
+    "parameters": [
+      {
+        "name": "chainRegionId",
+        "in": "path",
+        "required": true,
+        "description": "ID of chain region that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "ChainRegion Operations"
+      ],
+      "summary": "finds a chain region by its id",
+      "responses": {
+        "200": {
+          "description": "chain region response",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "ChainRegion Operations"
+      ],
+      "summary": "deletes a chain region region by its id",
+      "responses": {
+        "200": {
+          "description": "chain region response",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "ChainRegion Operations"
+      ],
+      "summary": "updates a chain region by its id",
+      "parameters": [
+        {
+          "name": "chainRegion",
+          "in": "body",
+          "description": "The new chain region",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chain region response",
+          "schema": {
+            "$ref": "#/definitions/ChainRegion"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chains": {
+    "get": {
+      "tags": [
+        "Chain Operations"
+      ],
+      "summary": "finds all the chains",
+      "responses": {
+        "200": {
+          "description": "chain list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Chain"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Chain Operations"
+      ],
+      "summary": "saves a new chain",
+      "parameters": [
+        {
+          "name": "chain",
+          "in": "body",
+          "description": "The new chain",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chain response",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chains/{chainId}": {
+    "parameters": [
+      {
+        "name": "chainId",
+        "in": "path",
+        "required": true,
+        "description": "ID of chain that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Chain Operations"
+      ],
+      "summary": "finds a chain by its id",
+      "responses": {
+        "200": {
+          "description": "chain response",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Chain Operations"
+      ],
+      "summary": "deletes a chain by its id",
+      "responses": {
+        "200": {
+          "description": "chain response",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Chain Operations"
+      ],
+      "summary": "updates a chain by its id",
+      "parameters": [
+        {
+          "name": "chain",
+          "in": "body",
+          "description": "The new chain",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chain response",
+          "schema": {
+            "$ref": "#/definitions/Chain"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chainattributes": {
+    "get": {
+      "tags": [
+        "ChainAttribute Operations"
+      ],
+      "summary": "finds all the ChainAttributes",
+      "responses": {
+        "200": {
+          "description": "chainAttribute list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChainAttribute"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "ChainAttribute Operations"
+      ],
+      "summary": "saves a new chainAttribute",
+      "parameters": [
+        {
+          "name": "chainAttribute",
+          "in": "body",
+          "description": "The new chainAttribute",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chainAttribute response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chainattributes/{chainAttributeId}": {
+    "parameters": [
+      {
+        "name": "chainAttributeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of chainAttribute that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "ChainAttribute Operations"
+      ],
+      "summary": "finds a chainAttribute by its id",
+      "responses": {
+        "200": {
+          "description": "chainAttribute response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "ChainAttribute Operations"
+      ],
+      "summary": "deletes a chainAttribute by its id",
+      "responses": {
+        "200": {
+          "description": "chainAttribute response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "ChainAttribute Operations"
+      ],
+      "summary": "updates a chainAttribute by its id",
+      "parameters": [
+        {
+          "name": "chainAttribute",
+          "in": "body",
+          "description": "The new chainAttribute",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chainAttribute response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/chainattributetypes": {
+    "get": {
+      "tags": [
+        "ChainAttribute Types Operations"
+      ],
+      "summary": "finds all the ChainAttribute types",
+      "responses": {
+        "200": {
+          "description": "chainAttribute type list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ChainAttributeType"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "ChainAttribute Types Operations"
+      ],
+      "summary": "saves a new chainAttribute type",
+      "parameters": [
+        {
+          "name": "chainAttributeType",
+          "in": "body",
+          "description": "The new chainAttribute type",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chainAttribute response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+    },
+   "/api/chainattributetypes/{chainAttributeTypeId}": {
+    "parameters": [
+      {
+        "name": "chainAttributeTypeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of chainAttribute type that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "ChainAttribute Types Operations"
+      ],
+      "summary": "finds a chainAttribute type by its id",
+      "responses": {
+        "200": {
+          "description": "chainAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "ChainAttribute Types Operations"
+      ],
+      "summary": "deletes a chainAttribute type by its id",
+      "responses": {
+        "200": {
+          "description": "chainAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "ChainAttribute Types Operations"
+      ],
+      "summary": "updates a chainAttribute type by its id",
+      "parameters": [
+        {
+          "name": "chainAttributeType",
+          "in": "body",
+          "description": "The new chainAttribute type",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "chainAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/ChainAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/sites": {
+    "get": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "finds all sites",
+      "responses": {
+        "200": {
+          "description": "site list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Site"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "saves a new site",
+      "parameters": [
+        {
+          "name": "site",
+          "in": "body",
+          "description": "The new site",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "site response",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/sites/{siteId}": {
+    "parameters": [
+      {
+        "name": "siteId",
+        "in": "path",
+        "required": true,
+        "description": "ID of site that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "finds a site by its id",
+      "responses": {
+        "200": {
+          "description": "site response",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "deletes a site by its id",
+      "responses": {
+        "200": {
+          "description": "site response",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "updates a site by its id",
+      "parameters": [
+        {
+          "name": "site",
+          "in": "body",
+          "description": "The new site",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "site response",
+          "schema": {
+            "$ref": "#/definitions/Site"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/sites/sitetypes": {
+    "get": {
+      "tags": [
+        "Site Operations"
+      ],
+      "summary": "show all site types",
+      "responses": {
+        "200": {
+          "description": "site type list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/SiteType"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/siteattributes": {
+    "get": {
+      "tags": [
+        "SiteAttribute Operations"
+      ],
+      "summary": "finds all the siteAttributes",
+      "responses": {
+        "200": {
+          "description": "siteAttribute list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/SiteAttribute"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "SiteAttribute Operations"
+      ],
+      "summary": "saves a new siteAttribute",
+      "parameters": [
+        {
+          "name": "siteAttribute",
+          "in": "body",
+          "description": "The new siteAttribute",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "siteAttribute response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/siteattributes/{siteAttributeId}": {
+    "parameters": [
+      {
+        "name": "siteAttributeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of siteAttribute that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "SiteAttribute Operations"
+      ],
+      "summary": "finds a siteAttribute by its id",
+      "responses": {
+        "200": {
+          "description": "siteAttribute response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "SiteAttribute Operations"
+      ],
+      "summary": "deletes a chainAttribute by its id",
+      "responses": {
+        "200": {
+          "description": "siteAttribute response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "SiteAttribute Operations"
+      ],
+      "summary": "updates a siteAttribute by its id",
+      "parameters": [
+        {
+          "name": "siteAttribute",
+          "in": "body",
+          "description": "The new SiteAttribute",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "siteAttribute response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttribute"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/siteattributetypes": {
+    "get": {
+      "tags": [
+        "SiteAttribute Types Operations"
+      ],
+      "summary": "finds all the SiteAttribute types",
+      "responses": {
+        "200": {
+          "description": "siteAttribute type list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/SiteAttributeType"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "SiteAttribute Types Operations"
+      ],
+      "summary": "saves a new siteAttribute type",
+      "parameters": [
+        {
+          "name": "siteAttributeType",
+          "in": "body",
+          "description": "The new siteAttribute type",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "siteAttribute response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+    },
+   "/api/siteattributetypes/{siteAttributeTypeId}": {
+    "parameters": [
+      {
+        "name": "siteAttributeTypeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of siteAttribute type that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "SiteAttribute Types Operations"
+      ],
+      "summary": "finds a siteAttribute type by its id",
+      "responses": {
+        "200": {
+          "description": "siteAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "SiteAttribute Types Operations"
+      ],
+      "summary": "deletes a siteAttribute type by its id",
+      "responses": {
+        "200": {
+          "description": "siteAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "SiteAttribute Types Operations"
+      ],
+      "summary": "updates a siteAttribute type by its id",
+      "parameters": [
+        {
+          "name": "siteAttributeType",
+          "in": "body",
+          "description": "The new siteAttribute type",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "siteAttribute type response",
+          "schema": {
+            "$ref": "#/definitions/SiteAttributeType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/addresses": {
+    "get": {
+      "tags": [
+        "Address Operations"
+      ],
+      "summary": "finds all the addresses",
+      "responses": {
+        "200": {
+          "description": "address list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Address"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Address Operations"
+      ],
+      "summary": "saves a new address",
+      "parameters": [
+        {
+          "name": "address",
+          "in": "body",
+          "description": "The new address",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "address response",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/addresses/{addressId}": {
+    "parameters": [
+      {
+        "name": "addressId",
+        "in": "path",
+        "required": true,
+        "description": "ID of address that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Address Operations"
+      ],
+      "summary": "finds an address by its id",
+      "responses": {
+        "200": {
+          "description": "address response",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Address Operations"
+      ],
+      "summary": "deletes an address by its id",
+      "responses": {
+        "200": {
+          "description": "address response",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Address Operations"
+      ],
+      "summary": "updates an address by its id",
+      "parameters": [
+        {
+          "name": "address",
+          "in": "body",
+          "description": "The new address",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "address response",
+          "schema": {
+            "$ref": "#/definitions/Address"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/contacts": {
+    "get": {
+      "tags": [
+        "Contact Operations"
+      ],
+      "summary": "finds all the contacts",
+      "responses": {
+        "200": {
+          "description": "contacts list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Contact Operations"
+      ],
+      "summary": "saves a new contact",
+      "parameters": [
+        {
+          "name": "contact",
+          "in": "body",
+          "description": "The new contact",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "contact response",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/contacts/{contactId}": {
+    "parameters": [
+      {
+        "name": "contactId",
+        "in": "path",
+        "required": true,
+        "description": "ID of contact that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Contact Operations"
+      ],
+      "summary": "finds an contact by its id",
+      "responses": {
+        "200": {
+          "description": "contact response",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Contact Operations"
+      ],
+      "summary": "deletes a contact by its id",
+      "responses": {
+        "200": {
+          "description": "contact response",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Contact Operations"
+      ],
+      "summary": "updates a contact by its id",
+      "parameters": [
+        {
+          "name": "contact",
+          "in": "body",
+          "description": "The new contact",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "contact response",
+          "schema": {
+            "$ref": "#/definitions/Contact"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/customers": {
+    "get": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "finds all the customers",
+      "responses": {
+        "200": {
+          "description": "customers list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "saves a new customer",
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "body",
+          "description": "The new customer",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "customer response",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/customers/{customerId}": {
+    "parameters": [
+      {
+        "name": "customerId",
+        "in": "path",
+        "required": true,
+        "description": "ID of customer that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "finds a customer by its id",
+      "responses": {
+        "200": {
+          "description": "customer response",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "deletes a customer by its id",
+      "responses": {
+        "200": {
+          "description": "customer response",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "updates a customer by its id",
+      "parameters": [
+        {
+          "name": "customer",
+          "in": "body",
+          "description": "The new customer",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "customer response",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/customers/existsbyname/{customerName}": {
+    "parameters": [
+      {
+        "name": "customerName",
+        "in": "path",
+        "required": true,
+        "description": "the name of customer that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "finds a customer by its name",
+      "responses": {
+        "200": {
+          "description": "customer response",
+          "schema": {
+            "$ref": "#/definitions/Customer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/customers/types": {
+    "get": {
+      "tags": [
+        "Customer Operations"
+      ],
+      "summary": "retrieves all the customer types (i.e. Franchisee and Corporation)",
+      "responses": {
+        "200": {
+          "description": "customer types response",
+          "schema": {
+            "$ref": "#/definitions/CustomerType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliancemanufacturers": {
+    "get": {
+      "tags": [
+        "Appliance Manufacturer Operations"
+      ],
+      "summary": "finds all the appliance manufacturers",
+      "responses": {
+        "200": {
+          "description": "appliance manufacturer list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ApplianceManufacturer"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Appliance Manufacturer Operations"
+      ],
+      "summary": "saves a new appliance manufacturer",
+      "parameters": [
+        {
+          "name": "appliance manufacturer",
+          "in": "body",
+          "description": "The new appliance manufacturer",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliancemanufacturers/{applianceManufacturerId}": {
+    "parameters": [
+      {
+        "name": "applianceManufacturerId",
+        "in": "path",
+        "required": true,
+        "description": "ID of appliance manufacturer that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Manufacturer Operations"
+      ],
+      "summary": "finds an appliance manufacturer by its id",
+      "responses": {
+        "200": {
+          "description": "appliance manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Appliance Manufacturer Operations"
+      ],
+      "summary": "deletes an appliance manufacturer by its id",
+      "responses": {
+        "200": {
+          "description": "appliance manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Manufacturer Operations"
+      ],
+      "summary": "updates an appliance manufacturer by its id",
+      "parameters": [
+        {
+          "name": "appliance manufacturer",
+          "in": "body",
+          "description": "The new appliance manufacturer",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliancemodels": {
+    "get": {
+      "tags": [
+        "Appliance Model Operations"
+      ],
+      "summary": "finds all the appliance models",
+      "responses": {
+        "200": {
+          "description": "appliance model list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ApplianceModel"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Appliance Model Operations"
+      ],
+      "summary": "saves a new appliance model",
+      "parameters": [
+        {
+          "name": "appliance model",
+          "in": "body",
+          "description": "The new appliance model",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance model response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliancemodels/{applianceModelId}": {
+    "parameters": [
+      {
+        "name": "applianceModelId",
+        "in": "path",
+        "required": true,
+        "description": "ID of appliance model that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Model Operations"
+      ],
+      "summary": "finds an appliance model by its id",
+      "responses": {
+        "200": {
+          "description": "appliance model response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Appliance Model Operations"
+      ],
+      "summary": "deletes an appliance model by its id",
+      "responses": {
+        "200": {
+          "description": "appliance model response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Model Operations"
+      ],
+      "summary": "updates an appliance model by its id",
+      "parameters": [
+        {
+          "name": "appliance model",
+          "in": "body",
+          "description": "The new appliance model",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance model response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceparameters": {
+    "get": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "finds all the appliance parameters",
+      "responses": {
+        "200": {
+          "description": "appliance parameter list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ApplianceParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "saves a new appliance parameter",
+      "parameters": [
+        {
+          "name": "appliance parameter",
+          "in": "body",
+          "description": "The new appliance parameter",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceparameters/{applianceParameterId}": {
+    "parameters": [
+      {
+        "name": "applianceParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of appliance parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "finds an appliance parameter by its id",
+      "responses": {
+        "200": {
+          "description": "appliance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "deletes an appliance parameter by its id",
+      "responses": {
+        "200": {
+          "description": "appliance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "updates an appliance parameter by its id",
+      "parameters": [
+        {
+          "name": "appliance parameter",
+          "in": "body",
+          "description": "The new appliance parameter",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceparameters/types": {
+    "get": {
+      "tags": [
+        "Appliance Parameter Operations"
+      ],
+      "summary": "retrieves all the appliance parameter types (i.e. Appliance, Events, Recipe Pre Alarm, etc.)",
+      "responses": {
+        "200": {
+          "description": "appliance parameters type response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceParameterType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliances": {
+    "get": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "finds all the appliances",
+      "responses": {
+        "200": {
+          "description": "appliances list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Appliance"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "saves a new appliance",
+      "parameters": [
+        {
+          "name": "appliance",
+          "in": "body",
+          "description": "The new appliance",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance response",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliances/{applianceId}": {
+    "parameters": [
+      {
+        "name": "applianceId",
+        "in": "path",
+        "required": true,
+        "description": "ID of appliance that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "finds a appliance by its id",
+      "responses": {
+        "200": {
+          "description": "appliance response",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "deletes an appliance by its id",
+      "responses": {
+        "200": {
+          "description": "appliance response",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "updates a appliance by its id",
+      "parameters": [
+        {
+          "name": "appliance",
+          "in": "body",
+          "description": "The new appliance",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance response",
+          "schema": {
+            "$ref": "#/definitions/Appliance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/appliances/types": {
+    "get": {
+      "tags": [
+        "Appliance Operations"
+      ],
+      "summary": "retrieves all the appliance types (i.e. Fryer, Dishwasher, Oven, etc.)",
+      "responses": {
+        "200": {
+          "description": "appliance types response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applications": {
+    "get": {
+      "tags": [
+        "Application Operations"
+      ],
+      "summary": "finds all the applications",
+      "responses": {
+        "200": {
+          "description": "application list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Application"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Application Operations"
+      ],
+      "summary": "saves a new application",
+      "parameters": [
+        {
+          "name": "application",
+          "in": "body",
+          "description": "The new application",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "application response",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applications/{applicationId}": {
+    "parameters": [
+      {
+        "name": "applicationId",
+        "in": "path",
+        "required": true,
+        "description": "ID of application that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Application Operations"
+      ],
+      "summary": "finds an application by its id",
+      "responses": {
+        "200": {
+          "description": "application response",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Application Operations"
+      ],
+      "summary": "deletes an application by its id",
+      "responses": {
+        "200": {
+          "description": "application response",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Application Operations"
+      ],
+      "summary": "updates an application by its id",
+      "parameters": [
+        {
+          "name": "application",
+          "in": "body",
+          "description": "The new application",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "application response",
+          "schema": {
+            "$ref": "#/definitions/Application"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devicemanufacturers": {
+    "get": {
+      "tags": [
+        "Device Manufacturer Operations"
+      ],
+      "summary": "finds all the device manufacturers",
+      "responses": {
+        "200": {
+          "description": "device manufacturer list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceManufacturer"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Manufacturer Operations"
+      ],
+      "summary": "saves a new device manufacturer",
+      "parameters": [
+        {
+          "name": "device manufacturer",
+          "in": "body",
+          "description": "The new device manufacturer",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devicemanufacturers/{deviceManufacturerId}": {
+    "parameters": [
+      {
+        "name": "deviceManufacturerId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device manufacturer that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Manufacturer Operations"
+      ],
+      "summary": "finds a device manufacturer by its id",
+      "responses": {
+        "200": {
+          "description": "device manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Manufacturer Operations"
+      ],
+      "summary": "deletes a device manufacturer by its id",
+      "responses": {
+        "200": {
+          "description": "device manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Manufacturer Operations"
+      ],
+      "summary": "updates a device manufacturer by its id",
+      "parameters": [
+        {
+          "name": "device manufacturer",
+          "in": "body",
+          "description": "The new device manufacturer",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device manufacturer response",
+          "schema": {
+            "$ref": "#/definitions/DeviceManufacturer"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devicemodels": {
+    "get": {
+      "tags": [
+        "Device Model Operations"
+      ],
+      "summary": "finds all the device models",
+      "responses": {
+        "200": {
+          "description": "device model list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceModel"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Model Operations"
+      ],
+      "summary": "saves a new device model",
+      "parameters": [
+        {
+          "name": "device model",
+          "in": "body",
+          "description": "The new device model",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device model response",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devicemodels/{deviceModelId}": {
+    "parameters": [
+      {
+        "name": "deviceModelId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device model that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Model Operations"
+      ],
+      "summary": "finds a device model by its id",
+      "responses": {
+        "200": {
+          "description": "device model response",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Model Operations"
+      ],
+      "summary": "deletes a device model by its id",
+      "responses": {
+        "200": {
+          "description": "device model response",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Model Operations"
+      ],
+      "summary": "updates a device model by its id",
+      "parameters": [
+        {
+          "name": "device model",
+          "in": "body",
+          "description": "The new device model",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device model response",
+          "schema": {
+            "$ref": "#/definitions/DeviceModel"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceparameters": {
+    "get": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "finds all the device parameters",
+      "responses": {
+        "200": {
+          "description": "device parameter list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "saves a new device parameter",
+      "parameters": [
+        {
+          "name": "device parameter",
+          "in": "body",
+          "description": "The new device parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceparameters/{deviceParameterId}": {
+    "parameters": [
+      {
+        "name": "deviceParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "finds a device parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "deletes a device parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "updates a device parameter by its id",
+      "parameters": [
+        {
+          "name": "device parameter",
+          "in": "body",
+          "description": "The new device parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devices": {
+    "get": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "finds all the devices",
+      "responses": {
+        "200": {
+          "description": "devices list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Device"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "saves a new device",
+      "parameters": [
+        {
+          "name": "device",
+          "in": "body",
+          "description": "The new device",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device response",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devices/{deviceId}": {
+    "parameters": [
+      {
+        "name": "deviceId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "finds a device by its id",
+      "responses": {
+        "200": {
+          "description": "device response",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "deletes a device by its id",
+      "responses": {
+        "200": {
+          "description": "device response",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "updates a device by its id",
+      "parameters": [
+        {
+          "name": "device",
+          "in": "body",
+          "description": "The new device",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device response",
+          "schema": {
+            "$ref": "#/definitions/Device"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/devices/types": {
+    "get": {
+      "tags": [
+        "Device Operations"
+      ],
+      "summary": "retrieves all the device types (i.e. Fryer, Dishwasher, Oven, etc.)",
+      "responses": {
+        "200": {
+          "description": "device types response",
+          "schema": {
+            "$ref": "#/definitions/DeviceType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceparameters/types": {
+    "get": {
+      "tags": [
+        "Device Parameter Operations"
+      ],
+      "summary": "retrieves all the device parameter types (i.e. Appliance, Events, Recipe Pre Alarm, etc.)",
+      "responses": {
+        "200": {
+          "description": "device parameters type response",
+          "schema": {
+            "$ref": "#/definitions/DeviceParameterType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceconfigurations": {
+    "get": {
+      "tags": [
+        "Device Configuration Operations"
+      ],
+      "summary": "finds all the device configurations",
+      "responses": {
+        "200": {
+          "description": "device configuration list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceConfiguration"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Configuration Operations"
+      ],
+      "summary": "saves a new device configuration",
+      "parameters": [
+        {
+          "name": "device configuration",
+          "in": "body",
+          "description": "The new device configuration",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device configuration response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceconfigurations/{deviceConfigurationId}": {
+    "parameters": [
+      {
+        "name": "deviceConfigurationId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device configuration that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Configuration Operations"
+      ],
+      "summary": "finds a device configuration by its id",
+      "responses": {
+        "200": {
+          "description": "device configuration response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Configuration Operations"
+      ],
+      "summary": "deletes a device configuration by its id",
+      "responses": {
+        "200": {
+          "description": "device configuration response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Configuration Operations"
+      ],
+      "summary": "updates a device configuration by its id",
+      "parameters": [
+        {
+          "name": "device configuration",
+          "in": "body",
+          "description": "The new device configuration",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device configuration response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfiguration"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceglobalparameters": {
+    "get": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "finds all the device global parameters",
+      "responses": {
+        "200": {
+          "description": "device global parameters list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceGlobalParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "saves a new device global parameter",
+      "parameters": [
+        {
+          "name": "deviceGlobalParameter",
+          "in": "body",
+          "description": "The new device global parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceglobalparameters/{deviceGlobalParameterId}": {
+    "parameters": [
+      {
+        "name": "deviceGlobalParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device global parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "finds a device global parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "deletes a device global parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "updates a device global parameter by its id",
+      "parameters": [
+        {
+          "name": "deviceGlobalParameter",
+          "in": "body",
+          "description": "The new device global parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceglobalparameters/orientations": {
+    "get": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "retrieves all the devices' orientations (i.e. Horizontal, Vertical)",
+      "responses": {
+        "200": {
+          "description": "device orientations response",
+          "schema": {
+            "$ref": "#/definitions/Orientation"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceglobalparameters/offsettypes": {
+    "get": {
+      "tags": [
+        "Device Global Parameters Operations"
+      ],
+      "summary": "retrieves all the devices' offset types (i.e. TBD)",
+      "responses": {
+        "200": {
+          "description": "device offset types response",
+          "schema": {
+            "$ref": "#/definitions/OffsetType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceconfigurationinstances": {
+    "get": {
+      "tags": [
+        "Device Configuration Instance Operations"
+      ],
+      "summary": "finds all the device configuration instances",
+      "responses": {
+        "200": {
+          "description": "device configuration instances list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceConfigurationInstance"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Configuration Instance Operations"
+      ],
+      "summary": "spawns a new device configuration instance based on an existing device configuration (id)",
+      "parameters": [
+        {
+          "name": "deviceConfigurationInstance",
+          "in": "body",
+          "description": "The existing device configuration id [and new instance instance name]",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfigurationInstance"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device configuration instance response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfigurationInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceconfigurationinstances/{deviceConfigurationInstanceId}": {
+    "parameters": [
+      {
+        "name": "deviceConfigurationInstanceId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device configuration instance that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Configuration Instance Operations"
+      ],
+      "summary": "finds a device configuration instance by its id",
+      "responses": {
+        "200": {
+          "description": "device configuration instance response",
+          "schema": {
+            "$ref": "#/definitions/DeviceConfigurationInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+
+
+  "/api/topologycomponents": {
+    "get": {
+      "tags": [
+        "Topology Component Operations"
+      ],
+      "summary": "finds all the topology components",
+      "responses": {
+        "200": {
+          "description": "topology components list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TopologyComponent"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Topology Component Operations"
+      ],
+      "summary": "saves a new topology component",
+      "parameters": [
+        {
+          "name": "topologyComponent",
+          "in": "body",
+          "description": "The new topology component",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponent"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "topology component response",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponent"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/topologycomponents/{topologyComponentId}": {
+    "parameters": [
+      {
+        "name": "topologyComponentId",
+        "in": "path",
+        "required": true,
+        "description": "ID of topology component that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Topology Component Operations"
+      ],
+      "summary": "finds a topology component by its id",
+      "responses": {
+        "200": {
+          "description": "topology component response",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponent"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Topology Component Operations"
+      ],
+      "summary": "updates a topology component by its id",
+      "parameters": [
+        {
+          "name": "topologyComponent",
+          "in": "body",
+          "description": "The new topology component",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponent "
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "topology component response",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponent"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/topologycomponents/types": {
+    "get": {
+      "tags": [
+        "Topology Component Operations"
+      ],
+      "summary": "retrieves all the topology components types (i.e. Application, Device, KA, Cloud)",
+      "responses": {
+        "200": {
+          "description": "topology component types response",
+          "schema": {
+            "$ref": "#/definitions/TopologyComponentType"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceinstances/{applianceInstanceId}": {
+    "parameters": [
+      {
+        "name": "applianceInstanceId",
+        "in": "path",
+        "required": true,
+        "description": "ID of the appliance instance that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Instance Operations"
+      ],
+      "summary": "finds an appliance instance  by its id",
+      "responses": {
+        "200": {
+          "description": "appliance instance response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Instance Operations"
+      ],
+      "summary": "updates a appliance instance by its id",
+      "parameters": [
+        {
+          "name": "appliance instance",
+          "in": "body",
+          "description": "The new appliance instance",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstance"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance instance response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceinstances/{deviceInstanceId}": {
+    "parameters": [
+      {
+        "name": "deviceInstanceId",
+        "in": "path",
+        "required": true,
+        "description": "ID of the device instance that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Instance Operations"
+      ],
+      "summary": "finds an device instance  by its id",
+      "responses": {
+        "200": {
+          "description": "device instance response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Instance Operations"
+      ],
+      "summary": "updates a device instance by its id",
+      "parameters": [
+        {
+          "name": "device instance",
+          "in": "body",
+          "description": "The new device instance",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstance"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device instance response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstance"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceinstanceparameters": {
+    "get": {
+      "tags": [
+        "Appliance Instance Parameter Operations"
+      ],
+      "summary": "finds all the appliance instance parameters",
+      "responses": {
+        "200": {
+          "description": "appliance instance parameter list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/ApplianceInstanceParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Appliance Instance Parameter Operations"
+      ],
+      "summary": "saves a new appliance instance parameter",
+      "parameters": [
+        {
+          "name": "appliance instnce parameter",
+          "in": "body",
+          "description": "The new appliance instance parameter",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstanceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/applianceinstanceparameters/{applianceInstanceParameterId}": {
+    "parameters": [
+      {
+        "name": "applianceInstanceParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of appliance instance parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Appliance Instance Parameter Operations"
+      ],
+      "summary": "finds an appliance instance parameter by its id",
+      "responses": {
+        "200": {
+          "description": "appliance instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Appliance Instance Parameter Operations"
+      ],
+      "summary": "updates an appliance instance parameter by its id",
+      "parameters": [
+        {
+          "name": "appliance instance parameter",
+          "in": "body",
+          "description": "The new appliance instance parameter",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstanceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "appliance instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/ApplianceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceinstanceparameters": {
+    "get": {
+      "tags": [
+        "Device Instance Parameter Operations"
+      ],
+      "summary": "finds all the device instance parameters",
+      "responses": {
+        "200": {
+          "description": "device instance parameter list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceInstanceParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Instance Parameter Operations"
+      ],
+      "summary": "saves a new device instance parameter",
+      "parameters": [
+        {
+          "name": "device instnce parameter",
+          "in": "body",
+          "description": "The new device instance parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceinstanceparameters/{deviceInstanceParameterId}": {
+    "parameters": [
+      {
+        "name": "deviceInstanceParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device instance parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Instance Parameter Operations"
+      ],
+      "summary": "finds an device instance parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Instance Parameter Operations"
+      ],
+      "summary": "updates an device instance parameter by its id",
+      "parameters": [
+        {
+          "name": "device instance parameter",
+          "in": "body",
+          "description": "The new device instance parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device instance parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceinstanceglobalparameters": {
+    "get": {
+      "tags": [
+        "Device Instance Global Parameters Operations"
+      ],
+      "summary": "finds all the device instance global parameters",
+      "responses": {
+        "200": {
+          "description": "device instance global parameters list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Device Instance Global Parameters Operations"
+      ],
+      "summary": "saves a new device instance global parameter",
+      "parameters": [
+        {
+          "name": "deviceInstanceGlobalParameter",
+          "in": "body",
+          "description": "The new device instance global parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device instance global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/deviceinstanceglobalparameters/{deviceInstanceGlobalParameterId}": {
+    "parameters": [
+      {
+        "name": "deviceInstanceGlobalParameterId",
+        "in": "path",
+        "required": true,
+        "description": "ID of device instance global parameter that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Device Instance Global Parameters Operations"
+      ],
+      "summary": "finds a device instance global parameter by its id",
+      "responses": {
+        "200": {
+          "description": "device instance global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Device Instance Global Parameters Operations"
+      ],
+      "summary": "updates a device instance global parameter by its id",
+      "parameters": [
+        {
+          "name": "deviceInstanceGlobalParameter",
+          "in": "body",
+          "description": "The new device instance global parameter",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "device instance global parameter response",
+          "schema": {
+            "$ref": "#/definitions/DeviceInstanceGlobalParameter"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/policies": {
+    "get": {
+      "tags": [
+        "Policy Operations"
+      ],
+      "summary": "finds all the policies",
+      "responses": {
+        "200": {
+          "description": "policies list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Policy"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Policy Operations"
+      ],
+      "summary": "saves a new policy",
+      "parameters": [
+        {
+          "name": "policy",
+          "in": "body",
+          "description": "The new policy",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "policy response",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/policies/{policyId}": {
+    "parameters": [
+      {
+        "name": "policyId",
+        "in": "path",
+        "required": true,
+        "description": "ID of policy that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Policy Operations"
+      ],
+      "summary": "finds an policy by its id",
+      "responses": {
+        "200": {
+          "description": "policy response",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Policy Operations"
+      ],
+      "summary": "deletes a policy by its id",
+      "responses": {
+        "200": {
+          "description": "policy response",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Policy Operations"
+      ],
+      "summary": "updates a policy by its id",
+      "parameters": [
+        {
+          "name": "policy",
+          "in": "body",
+          "description": "The new policy",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "policy response",
+          "schema": {
+            "$ref": "#/definitions/Policy"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/locales/names": {
+    "get": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "retrieves all the locales names (i.e. System, Security, etc.)",
+      "responses": {
+        "200": {
+          "description": "locale names response",
+          "schema": {
+            "$ref": "#/definitions/LocaleName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "saves a new locale name",
+      "parameters": [
+        {
+          "name": "locale name",
+          "in": "body",
+          "description": "The new locale name",
+          "schema": {
+            "$ref": "#/definitions/LocaleName"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "locale name response",
+          "schema": {
+            "$ref": "#/definitions/LocaleName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/locales": {
+    "get": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "finds all the locales",
+      "responses": {
+        "200": {
+          "description": "locales list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Locale"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "saves a new locale",
+      "parameters": [
+        {
+          "name": "locale",
+          "in": "body",
+          "description": "The new locale",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "locale response",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/locales/{localeId}": {
+    "parameters": [
+      {
+        "name": "localeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of locale that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "finds an locale by its id",
+      "responses": {
+        "200": {
+          "description": "locale response",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "deletes a locale by its id",
+      "responses": {
+        "200": {
+          "description": "locale response",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Locale Operations"
+      ],
+      "summary": "updates a locale by its id",
+      "parameters": [
+        {
+          "name": "locale",
+          "in": "body",
+          "description": "The new locale",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "locale response",
+          "schema": {
+            "$ref": "#/definitions/Locale"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/privileges/names": {
+    "get": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "retrieves all the privileges names (i.e. System, Security, etc.)",
+      "responses": {
+        "200": {
+          "description": "privilege names response",
+          "schema": {
+            "$ref": "#/definitions/PrivilegeName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "saves a new privilege name",
+      "parameters": [
+        {
+          "name": "privilege name",
+          "in": "body",
+          "description": "The new privilege name",
+          "schema": {
+            "$ref": "#/definitions/PrivilegeName"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "privilege name response",
+          "schema": {
+            "$ref": "#/definitions/PrivilegeName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/privileges": {
+    "get": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "finds all the privileges",
+      "responses": {
+        "200": {
+          "description": "privileges list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Privilege"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "saves a new privilege",
+      "parameters": [
+        {
+          "name": "privilege",
+          "in": "body",
+          "description": "The new privilege",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "privilege response",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/privileges/{privilegeId}": {
+    "parameters": [
+      {
+        "name": "privilegeId",
+        "in": "path",
+        "required": true,
+        "description": "ID of privilege that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "finds an privilege by its id",
+      "responses": {
+        "200": {
+          "description": "privilege response",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "deletes a privilege by its id",
+      "responses": {
+        "200": {
+          "description": "privilege response",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Privilege Operations"
+      ],
+      "summary": "updates a privilege by its id",
+      "parameters": [
+        {
+          "name": "privilege",
+          "in": "body",
+          "description": "The new privilege",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "privilege response",
+          "schema": {
+            "$ref": "#/definitions/Privilege"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/roles/names": {
+    "get": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "retrieves all the roles names (i.e. System, Security, etc.)",
+      "responses": {
+        "200": {
+          "description": "role names response",
+          "schema": {
+            "$ref": "#/definitions/RoleName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "saves a new role name",
+      "parameters": [
+        {
+          "name": "role name",
+          "in": "body",
+          "description": "The new role name",
+          "schema": {
+            "$ref": "#/definitions/RoleName"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "role name response",
+          "schema": {
+            "$ref": "#/definitions/RoleName"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/roles": {
+    "get": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "finds all the roles",
+      "responses": {
+        "200": {
+          "description": "roles list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Role"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "saves a new role",
+      "parameters": [
+        {
+          "name": "role",
+          "in": "body",
+          "description": "The new role",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "role response",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/roles/{roleId}": {
+    "parameters": [
+      {
+        "name": "roleId",
+        "in": "path",
+        "required": true,
+        "description": "ID of role that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "finds an role by its id",
+      "responses": {
+        "200": {
+          "description": "role response",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "deletes a role by its id",
+      "responses": {
+        "200": {
+          "description": "role response",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Role Operations"
+      ],
+      "summary": "updates a role by its id",
+      "parameters": [
+        {
+          "name": "role",
+          "in": "body",
+          "description": "The new role",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "role response",
+          "schema": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/groups": {
+    "get": {
+      "tags": [
+        "Group Operations"
+      ],
+      "summary": "finds all the groups",
+      "responses": {
+        "200": {
+          "description": "groups list response",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Group"
+            }
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "post": {
+      "tags": [
+        "Group Operations"
+      ],
+      "summary": "saves a new group",
+      "parameters": [
+        {
+          "name": "group",
+          "in": "body",
+          "description": "The new group",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "group response",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/api/groups/{groupId}": {
+    "parameters": [
+      {
+        "name": "groupId",
+        "in": "path",
+        "required": true,
+        "description": "ID of group that we want to find",
+        "type": "string"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Group Operations"
+      ],
+      "summary": "finds an group by its id",
+      "responses": {
+        "200": {
+          "description": "group response",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "delete": {
+      "tags": [
+        "Group Operations"
+      ],
+      "summary": "deletes a group by its id",
+      "responses": {
+        "200": {
+          "description": "group response",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    },
+    "put": {
+      "tags": [
+        "Group Operations"
+      ],
+      "summary": "updates a group by its id",
+      "parameters": [
+        {
+          "name": "group",
+          "in": "body",
+          "description": "The new group",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "group response",
+          "schema": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "default": {
+          "description": "unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  }
+}

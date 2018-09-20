@@ -1,0 +1,7 @@
+Setup steps:
+1. clone repository
+2. go to root
+3. copy local.js file into env folder
+4. from root run ```docker-compose up``` or ```docker compose up```
+5. connect to db and create database regarding db name from local.js
+6. ```npm run start```

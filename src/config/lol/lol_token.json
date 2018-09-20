@@ -1,0 +1,15 @@
+{
+  "token": "RGAPI-bbd379f7-ba35-4209-a0b2-f29d50ce5e84",
+  "post_links": {
+    "league": "api.riotgames.com/lol/league/v3/leagues/",
+    "position": "api.riotgames.com/lol/league/v3/positions/by-summoner/",
+    "summoner": "api.riotgames.com/lol/summoner/v3/summoners/",
+    "summoner_by_name": "api.riotgames.com/lol/summoner/v3/summoners/by-name/",
+    "summoner_by_account": "api.riotgames.com/lol/summoner/v3/summoners/by-account/",
+    "matchlists_by_account": "api.riotgames.com/lol/match/v3/matchlists/by-account/",
+    "match_by_gameId": "api.riotgames.com/lol/match/v3/matches/",
+    "timeline_by_gameId": "api.riotgames.com/lol/match/v3/timelines/by-match/",
+    "status": "api.riotgames.com/lol/status/v3/shard-data",
+    "champion_rotations": "api.riotgames.com/lol/platform/v3/champion-rotations"
+  }
+}

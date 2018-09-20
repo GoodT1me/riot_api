@@ -1,0 +1,13 @@
+Thumbs.db
+.DS_Store
+.idea
+node_modules
+.ebextensions
+dist
+package-lock.json
+src/config/environment/local.js
+uploads/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

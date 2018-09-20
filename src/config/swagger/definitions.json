@@ -1,0 +1,1098 @@
+{
+  "User": {
+    "required": [
+      "id",
+      "firstName",
+      "lastName",
+      "roles"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "brand": {
+        "type": "string"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "roles": {
+        "$ref": "#/definitions/Roles"
+      }
+    }
+  },
+  "Roles": {
+    "required": [
+      "roles"
+    ],
+    "properties": {
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "Credentials": {
+    "required": [
+      "username",
+      "password"
+    ],
+    "properties": {
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    }
+  },
+  "AuthorizationResponse": {
+    "required": [
+      "message",
+      "user",
+      "token"
+    ],
+    "properties": {
+      "message": {
+        "type": "string"
+      },
+      "user": {
+        "$ref": "#/definitions/User"
+      },
+      "token": {
+        "type": "string"
+      }
+    }
+  },
+  "Error": {
+    "required": [
+      "code",
+      "message"
+    ],
+    "properties": {
+      "code": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "message": {
+        "type": "string"
+      }
+    }
+  },
+  "ParentBrand": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Brand": {
+    "required": [
+      "name",
+      "parentBrandId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "parentBrandId": {
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  },
+  "BrandChainMapping": {
+    "required": [
+      "brandId",
+      "chainId"
+    ],
+    "properties": {
+      "brandId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "chainId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "Chain": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "ChainRegion": {
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "ChainAttributeMapping": {
+    "required": [
+      "chainAttributeId",
+      "chainId"
+    ],
+    "properties": {
+      "chainAttributeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "chainId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "ChainRegionMapping": {
+    "required": [
+      "chainRegionId",
+      "chainId"
+    ],
+    "properties": {
+      "chainRegionId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "chainId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "ChainAttribute": {
+    "required": [
+      "name",
+      "value"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "chainAttributeTypeId": {
+        "type": "integer"
+      }
+    }
+  },
+  "ChainAttributeType": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Site": {
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "chainId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "addressId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "siteTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "brandId": {
+        "type": "integer"
+      },
+      "chainRegionId": {
+        "type": "integer"
+      },
+      "localeId": {
+        "type": "integer"
+      }
+    }
+  },
+  "SiteType": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "SiteAttributeMapping": {
+    "required": [
+      "siteAttributeId",
+      "siteId"
+    ],
+    "properties": {
+      "siteAttributeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "siteId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "SiteAttribute": {
+    "required": [
+      "name",
+      "value"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "siteAttributeTypeId": {
+        "type": "integer"
+      }
+    }
+  },
+  "SiteAttributeType": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Address": {
+    "required": [
+      "address1",
+      "city",
+      "state",
+      "country",
+      "postalCode"
+    ],
+    "properties": {
+      "address1": {
+        "type": "string"
+      },
+      "address2": {
+        "type": "string"
+      },
+      "address3": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      },
+      "postalCode": {
+        "type": "string"
+      },
+      "latitude": {
+        "type": "number"
+      },
+      "longitude": {
+        "type": "number"
+      }
+    }
+  },
+  "Contact": {
+    "required": [
+      "firstName",
+      "lastName",
+      "email1",
+      "workPhone"
+    ],
+    "properties": {
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "email1": {
+        "type": "string"
+      },
+      "email2": {
+        "type": "string"
+      },
+      "workPhone": {
+        "type": "string"
+      }
+    }
+  },
+  "Customer": {
+    "required": [
+      "name",
+      "customerTypeId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "customerTypeId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "CustomerAddressMapping": {
+    "required": [
+      "customerId",
+      "addressId"
+    ],
+    "properties": {
+      "customerId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "addressId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "CustomerChainMapping": {
+    "required": [
+      "customerId",
+      "chainId"
+    ],
+    "properties": {
+      "customerId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "chainId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "CustomerContactMapping": {
+    "required": [
+      "customerId",
+      "contactId"
+    ],
+    "properties": {
+      "customerId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "contactId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "CustomerType": {
+    "required": [
+      "id",
+      "name"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "ApplianceManufacturer": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "ApplianceModel": {
+    "required": [
+      "name",
+      "applianceManufacturerId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "applianceManufacturerId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "ApplianceParameter": {
+    "required": [
+      "name",
+      "value",
+      "attribute",
+      "maxElements"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "applianceParameterTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "engineeringUnit": {
+        "type": "string"
+      },
+      "maxElements": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "dataType": {
+        "type": "string"
+      },
+      "dataSize": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "bitOffset": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "factor": {
+        "type": "number"
+      }
+    }
+  },
+  "Appliance": {
+    "required": [
+      "name",
+      "image",
+      "partNumber",
+      "applianceTypeId",
+      "applianceModelId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "partNumber": {
+        "type": "string"
+      },
+      "applianceTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "applianceModelId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "Application": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceManufacturer": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceModel": {
+    "required": [
+      "name",
+      "deviceManufacturerId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "deviceManufacturerId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "DeviceParameter": {
+    "required": [
+      "name",
+      "value",
+      "attribute",
+      "maxElements"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "deviceParameterTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "engineeringUnit": {
+        "type": "string"
+      },
+      "maxElements": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "dataType": {
+        "type": "string"
+      },
+      "dataSize": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "bitOffset": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "factor": {
+        "type": "number"
+      }
+    }
+  },
+  "Device": {
+    "required": [
+      "name",
+      "image",
+      "partNumber",
+      "deviceTypeId",
+      "deviceModelId"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "partNumber": {
+        "type": "string"
+      },
+      "deviceTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "deviceModelId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "DeviceParameterType": {
+    "required": [
+      "id",
+      "name"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Orientation": {
+    "required": [
+      "id",
+      "name"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "OffsetType": {
+    "required": [
+      "id",
+      "name"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceConfiguration": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceGlobalParameter": {
+    "required": [
+      "numberOfButtons",
+      "orientationId",
+      "voltage",
+      "maxElementsPerButton",
+      "maxStagesPerButton",
+      "offsetTypeId"
+    ],
+    "properties": {
+      "numberOfButtons": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "orientationId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "voltage": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxElementsPerButton": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxStagesPerButton": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "offsetTypeId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "DeviceConfigurationInstance": {
+    "required": [
+      "deviceConfigurationId"
+    ],
+    "properties": {
+      "deviceConfigurationId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "TopologyComponent": {
+    "required": [
+      "component",
+      "topologyComponentTypeId"
+    ],
+    "properties": {
+      "component": {
+        "type": "string"
+      },
+      "applianceInstanceId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "deviceInstanceId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "deviceConfigurationInstanceId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "predecessorComponentId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "successorComponentId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "topologyComponentTypeId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "TopologyComponentType": {
+    "required": [
+      "id",
+      "name"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "ApplianceInstance": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceInstance": {
+    "required": [
+      "name"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "DeviceInstanceGlobalParameter": {
+    "required": [
+      "numberOfButtons",
+      "orientationId",
+      "voltage",
+      "maxElementsPerButton",
+      "maxStagesPerButton",
+      "offsetTypeId"
+    ],
+    "properties": {
+      "numberOfButtons": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "orientationId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "voltage": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxElementsPerButton": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "maxStagesPerButton": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "offsetTypeId": {
+        "type": "integer",
+        "format": "int64"
+      }
+    }
+  },
+  "DeviceInstanceParameter": {
+    "required": [
+      "name",
+      "value",
+      "attribute",
+      "maxElements"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "deviceParameterTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "engineeringUnit": {
+        "type": "string"
+      },
+      "maxElements": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "dataType": {
+        "type": "string"
+      },
+      "dataSize": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "bitOffset": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "factor": {
+        "type": "number"
+      }
+    }
+  },
+  "ApplianceInstanceParameter": {
+    "required": [
+      "name",
+      "value",
+      "attribute",
+      "maxElements"
+    ],
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "applianceParameterTypeId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "engineeringUnit": {
+        "type": "string"
+      },
+      "maxElements": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "dataType": {
+        "type": "string"
+      },
+      "dataSize": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "bitOffset": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "factor": {
+        "type": "number"
+      }
+    }
+  },
+  "Policy": {
+    "required": [
+      "minimumPasswordLength",
+      "minimumAlphabeticalCharactersInPassword",
+      "minimumNumericCharactersInPassword",
+      "minimumSpecialCharactersInPassword",
+      "minimumDaysBetweenPasswordChanges",
+      "numberOfDaysToWarnBeforePasswordExpiration",
+      "passwordReUsePreventionHistorySize",
+      "numberOfSuccessiveLoginFailuresTriggersLockOut",
+      "successiveLoginFailuresLockOutTimeInMin",
+      "daysUntilPasswordExpires"
+    ],
+    "properties": {
+      "minimumPasswordLength": {
+        "type": "integer"
+      },
+      "minimumAlphabeticalCharactersInPassword": {
+        "type": "integer"
+      },
+      "minimumNumericCharactersInPassword": {
+        "type": "integer"
+      },
+      "minimumSpecialCharactersInPassword": {
+        "type": "integer"
+      },
+      "minimumDaysBetweenPasswordChanges": {
+        "type": "integer"
+      },
+      "numberOfDaysToWarnBeforePasswordExpiration": {
+        "type": "integer"
+      },
+      "passwordReUsePreventionHistorySize": {
+        "type": "integer"
+      },
+      "numberOfSuccessiveLoginFailuresTriggersLockOut": {
+        "type": "integer"
+      },
+      "successiveLoginFailuresLockOutTimeInMin": {
+        "type": "integer"
+      },
+      "daysUntilPasswordExpires": {
+        "type": "integer"
+      }
+    }
+  },
+  "LocaleName": {
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Locale": {
+    "properties": {
+      "localeNameId": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "enabled": {
+        "type": "boolean"
+      }
+    }
+  },
+  "PrivilegeName": {
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Privilege": {
+    "properties": {
+      "privilegeNameId": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "RoleName": {
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "Role": {
+    "properties": {
+      "roleNameId": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "Group": {
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  }
+}
