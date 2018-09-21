@@ -6,6 +6,7 @@ export default (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    summonerId: DataTypes.INTEGER,
     profileIconId: DataTypes.INTEGER,
     summoner_name: DataTypes.STRING(30),
     summonerLevel: DataTypes.INTEGER,

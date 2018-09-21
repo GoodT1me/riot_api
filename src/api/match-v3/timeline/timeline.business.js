@@ -5,7 +5,7 @@ import sqlConfig from '../../../config/sequelize';
 import * as DB from '../../../utilities/database';
 import { ValidationError } from '../../../utilities/resources/errors';
 
-const lol_cfg = require('../../../config/lol/lol_token.json')
+const lol_cfg = require('../../../config/riot/riot_cfg.json')
 const rp = require('request-promise');
 
 const { Timeline } = sqlConfig;

@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS summoners (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    summonerId bigint,
     profileIconId int,
     summoner_name VARCHAR(30),
     summonerLevel int,

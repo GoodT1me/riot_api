@@ -1,0 +1,33 @@
+{
+  "token": "RGAPI-ebf2072c-860d-4abf-98e6-fdf9fa5de0e8",
+  "post_links": {
+    "league": "api.riotgames.com/lol/league/v3/leagues/",
+    "position": "api.riotgames.com/lol/league/v3/positions/by-summoner/",
+    "summoner": "api.riotgames.com/lol/summoner/v3/summoners/",
+    "summoner_by_name": "api.riotgames.com/lol/summoner/v3/summoners/by-name/",
+    "summoner_by_account": "api.riotgames.com/lol/summoner/v3/summoners/by-account/",
+    "matchlists_by_account": "api.riotgames.com/lol/match/v3/matchlists/by-account/",
+    "match_by_gameId": "api.riotgames.com/lol/match/v3/matches/",
+    "timeline_by_gameId": "api.riotgames.com/lol/match/v3/timelines/by-match/",
+    "status": "api.riotgames.com/lol/status/v3/shard-data",
+    "champion_rotations": "api.riotgames.com/lol/platform/v3/champion-rotations"
+  },
+  "RIOT_API": {
+    "ENDPOINTS": {
+      "GET_SUMMONER_BY_NAME": "/lol/summoner/v3/summoners/by-name/",
+      "GET_SUMMONER_BY_ACCOUNT_ID": "/lol/summoner/v3/summoners/by-account/",
+      "GET_SUMMONER_BY_SUMMONER_ID": "/lol/summoner/v3/summoners/",
+      "GET_LEAGUE_BY_LEAGUE_ID": "/lol/league/v3/leagues/",
+      "GET_POSITION_BY_SUMMONER_ID": "/lol/league/v3/positions/by-summoner/",
+      "GET_MATCH_LIST_BY_ACCOUNT_ID": "/lol/match/v3/matchlists/by-account/",
+      "GET_MATCH_BY_GAME_ID": "/lol/match/v3/matches/",
+      "GET_TIMELINE_BY_GAME_ID": "/lol/match/v3/timelines/by-match/",
+      "GET_STATUS": "/lol/status/v3/shard-data",
+      "GET_CHAMPION_ROTATION": "/lol/platform/v3/champion-rotations"
+    },
+    "DOMAIN": "api.riotgames.com",
+    "REGIONS": "br.eune.euw.jp.kr.lan.las.na.oce.ru.tr",
+    "URL_TEMPLATE": "protocol.region.domain.endpoint"
+  }
+
+}

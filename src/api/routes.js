@@ -10,6 +10,7 @@ import TimelineModule from './match-v3/timeline'
 import StatusModule from './lol-status-v3/status'
 import ChampRotationModule from './champion-v3/champ_rotation'
 import authenticate from '../utilities/security'
+import SummonerBusinessService from './summoner/summoner.business';
 
 const bodyParser = require('body-parser');
 
@@ -39,7 +40,7 @@ export default (app) => {
   app.use('/api/users', authenticate(), UserModule);
   app.use('/api/languages', authenticate(), LanguageModule);
   app.use('/api/products', authenticate(), ProductModule);
-  app.use('/api/summoners', authenticate(), SummonerModule);
+  app.use('/api/:region/summoners', authenticate(), SummonerModule);
   app.use('/api/positions', authenticate(), PositionModule);
   app.use('/api/leagues', authenticate(), LeagueModule);
   app.use('/api/matchlists', authenticate(), MatchlistModule);
